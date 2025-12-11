@@ -12,9 +12,19 @@ const SignUpForm = () => {
       {/* Purple Button */}
       <div className={["styles.purpleButtonContainer"]}>
         <Button
+          variants="secondary"
           children={
-            <p>
-              <strong>Try it free 7 days</strong> then $20/mo. thereafter
+            <p
+              style={{
+                textAlign: "center",
+                padding: "0 40px",
+                fontWeight: "normal",
+              }}
+            >
+              <strong style={{ fontWeight: "bolder" }}>
+                Try it free 7 days
+              </strong>{" "}
+              then $20/mo. thereafter
             </p>
           }
         />

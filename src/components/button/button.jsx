@@ -6,7 +6,7 @@ const Button = ({ variants, children, onClick }) => {
     <section className={[styles.buttonContainer]}>
       <button
         onClick={onClick}
-        className={`${styles.similarButton} ${variants}`}
+        className={`${styles.similarButton} ${styles[`variant-${variants}`]}`}
       >
         {children}
       </button>
