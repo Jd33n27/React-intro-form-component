@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Primary */
+  --Red-400: hsl(0, 100%, 74%);
+  --Green-400: hsl(154, 59%, 51%);
+  --lightGreen: hsl(154, 59%, 70%);
+
+  /* Accent */
+  --Purple-700: hsl(248, 32%, 49%);
+
+  /* Neutral */
+  --Gray-900: hsl(249, 10%, 26%);
+  --lightGray: hsl(249, 10%, 80%);
+  --Purple-350: hsl(246, 25%, 77%);
+
+  --desktop-bg: url(/images/bg-intro-desktop.png);
+  --mobile-bg: url(/images/bg-intro-mobile.png);
+
+  --Poppins: "Poppins";
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-image: var(--mobile-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--Red-400);
+  min-height: 100vh;
+  font-family: var(--Poppins);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: var(--desktop-bg);
+  }
+}

@@ -1,0 +1,59 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  font-weight: 700;
+  padding: 1rem 1rem;
+  border: 2px solid var(--lightGray);
+  border-radius: 8px;
+}
+
+.input:focus {
+  outline-color: var(--Purple-700);
+}
+
+.errorIcon {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: default;
+}
+
+.errorMessageContainer {
+  display: none;
+  justify-content: flex-end;
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--color-Red-400);
+  margin-top: 0.25rem;
+}
+
+.inputContainer.error .errorIcon {
+  display: block;
+}
+
+.inputContainer.error .input {
+  border-color: var(--color-Red-400);
+}
+
+.inputContainer.error .errorMessageContainer {
+  display: flex;
+}
+
+/* A common utility class for accessibility.
+  It hides the element visually but keeps it for screen readers.
+*/
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
