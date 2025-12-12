@@ -16,6 +16,8 @@
 
 .variant-secondary{
   background-color: var(--Purple-700);
-  padding: 10px 2px;
+  padding: 0px 15px;
   max-width: 20rem;
+  line-height: 1.7rem;
+  margin-bottom: 1.3rem;
 }

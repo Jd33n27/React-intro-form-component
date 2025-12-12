@@ -18,7 +18,7 @@ const SignUpForm = () => {
               style={{
                 textAlign: "center",
                 padding: "0 40px",
-                fontWeight: "normal",
+                fontWeight: "lighter",
               }}
             >
               <strong style={{ fontWeight: "bolder" }}>

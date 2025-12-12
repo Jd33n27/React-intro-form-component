@@ -5,9 +5,9 @@ import SignUpForm from "./components/signUpForm/signUpForm";
 function App() {
 
   return (
-    <>
+    <div className="container">
       <SignUpForm />
-    </>
+    </div>
   );
 }
 
