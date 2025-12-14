@@ -1,3 +1,8 @@
+.signUpFormContainer{
+  padding: 10px 0;
+  max-width: 1440px;
+}
+
 .formField {
   background-color: white;
   flex-direction: column;
@@ -6,6 +11,7 @@
   padding: 20px;
   border: none;
   border-radius: 10px;
+  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .formContainer {
@@ -18,7 +24,8 @@
 
 @media (min-width: 680px) {
   .signUpFormContainer {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
   }
 }

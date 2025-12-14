@@ -17,7 +17,8 @@
 .variant-secondary {
   background-color: var(--Purple-700);
   padding: 0px 30px;
-  max-width: 20rem;
+  width: 20rem;
+  box-shadow: 0 5px 0px rgba(0, 0, 0, 0.2);
   line-height: 1.7rem;
   margin-bottom: 1.3rem;
 }
@@ -33,4 +34,15 @@
 
 .variant-primary:hover {
   background-color: var(--lightGreen);
+}
+
+@media (min-width: 680px) {
+  .variant-secondary {
+    width: 40rem;
+    padding: 10px 0;
+  }
+
+  .variant-primary {
+    width: 35rem;
+  }
 }
