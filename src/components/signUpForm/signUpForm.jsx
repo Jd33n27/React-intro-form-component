@@ -6,9 +6,10 @@ import IntroText from "../introText/introText";
 
 const SignUpForm = () => {
   return (
-    <section className={`${styles.SignUpFormContainer}`}>
+    <section className={`${styles.signUpFormContainer}`}>
       {/* Text Content */}
       <IntroText />
+      <div className="desktopSeperator">
       {/* Purple Button */}
       <div className={["styles.purpleButtonContainer"]}>
         <Button
@@ -31,25 +32,30 @@ const SignUpForm = () => {
       </div>
 
       {/* Form */}
-      <div className={["styles.formContainer"]}>
-        <FormField
-          label="First Name"
-          type="text"
-          placeholder="Enter your first name"
-        />
-        <FormField
-          label="Last Name"
-          type="text"
-          placeholder="Enter your last name"
-        />
-        <FormField label="Email" type="email" placeholder="Enter your email" />
-        <FormField
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-        />
-        <Button children={"Sign up now"} />
+      <div className={`${styles.formField}`}>
+        <div className={`${styles.formContainer}`}>
+          <FormField label="First Name" type="text" placeholder="First name" />
+          <FormField label="Last Name" type="text" placeholder="Last name" />
+          <FormField label="Email" type="email" placeholder="Email Address" />
+          <FormField label="Password" type="password" placeholder="Password" />
+          <Button variants="primary" children={"claim your free trial"} />
+        </div>
+        <p style={{ color: "var(--lightGray)", textAlign: "center" }}>
+          By clicking the button, you are agreeing to our{" "}
+          <a
+            href="#"
+            style={{
+              color: "var(--Red-400)",
+              fontWeight: "bold",
+              textDecoration: "none",
+            }}
+          >
+            Terms and Services
+          </a>
+        </p>
       </div>
+      </div>
+      
     </section>
   );
 };

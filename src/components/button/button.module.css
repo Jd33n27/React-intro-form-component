@@ -14,10 +14,23 @@
   transition: background-color 0.3s ease;
 }
 
-.variant-secondary{
+.variant-secondary {
   background-color: var(--Purple-700);
-  padding: 0px 15px;
+  padding: 0px 30px;
   max-width: 20rem;
   line-height: 1.7rem;
   margin-bottom: 1.3rem;
+}
+
+.variant-primary {
+  background-color: var(--Green-400);
+  padding: 25px 50px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  box-shadow: inset 0 -5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.variant-primary:hover {
+  background-color: var(--lightGreen);
 }
