@@ -1,12 +1,12 @@
-.container{
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    padding: 30px 10px;
+.container {
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 30px 10px;
 }
 
-@media (min-width: 680px) {
-    .container{
-        padding: 30px;
-    }
+@media (min-width: 960px) {
+  .container {
+    padding: 30px;
+  }
 }

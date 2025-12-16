@@ -36,7 +36,7 @@
   background-color: var(--lightGreen);
 }
 
-@media (min-width: 680px) {
+@media (min-width: 960px) {
   .variant-secondary {
     width: 40rem;
     padding: 10px 0;

@@ -1,4 +1,4 @@
-.signUpFormContainer{
+.signUpFormContainer {
   padding: 10px 0;
   max-width: 1440px;
 }
@@ -22,7 +22,7 @@
   gap: 20px;
 }
 
-@media (min-width: 680px) {
+@media (min-width: 960px) {
   .signUpFormContainer {
     display: grid;
     grid-template-columns: 2fr 2fr;

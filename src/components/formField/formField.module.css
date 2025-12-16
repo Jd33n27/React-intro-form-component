@@ -2,13 +2,13 @@
   position: relative;
   width: 100%;
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .input {
   width: 100%;
   font-weight: 700;
-  padding: 1rem 1rem;
+  padding: 1rem 0.2rem;
   border: 2px solid var(--lightGray);
   border-radius: 8px;
 }
@@ -30,7 +30,7 @@
   justify-content: flex-end;
   font-style: italic;
   font-size: 0.875rem;
-  color: var(--color-Red-400);
+  color: var(--Red-400);
   margin-top: 0.25rem;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .inputContainer.error .input {
-  border-color: var(--color-Red-400);
+  border-color: var(--Red-400);
 }
 
 .inputContainer.error .errorMessageContainer {
