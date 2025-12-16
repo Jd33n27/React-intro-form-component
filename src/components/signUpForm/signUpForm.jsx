@@ -5,22 +5,62 @@ import Button from "../button/button";
 import IntroText from "../introText/introText";
 
 const SignUpForm = () => {
-  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState({});
 
-  const handleInputChanges = () => {
-    let inputValue = FormField.value;
-    if (inputValue.length === 0) {
-      console.log("cannot be empty");
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+
+    if (error[id]) {
+      setError((prevError) => ({ ...prevError, [id]: "" }));
+    }
+
+    setFormData((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    /* Check First Name */
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name cannot be empty";
+    }
+
+    /* Check Last Name */
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name cannot be empty";
+    }
+
+    /* Check Email */
+    const emailPattern = /^[^\s@]+\.[^\s@]+$/;
+    if (!formData.email) {
+      newErrors.email = "Email cannot be empty";
+    } else if (emailPattern.test(formData.email)) {
+      newErrors.email = "Looks like this is not an email";
+    }
+
+    /* Check Password */
+    if (!formData.password.trim()) {
+      newErrors.password = "Password cannot be empty";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setError(validationErrors);
     } else {
-      console.log("all is good");
-      inputValue = "";
+      console.log("Form submitted succesfully");
     }
   };
-
-  const validator = () => {
-    handleInputChanges();
-  };
-
   return (
     <section className={`${styles.signUpFormContainer}`}>
       {/* Text Content */}
@@ -49,25 +89,45 @@ const SignUpForm = () => {
 
         {/* Form */}
         <div className={`${styles.formField}`}>
-          <div className={`${styles.formContainer}`}>
+          <form onSubmit={handleSubmit} className={`${styles.formContainer}`}>
             <FormField
               label="First Name"
+              id="firstName"
+              value={formData.firstName}
               type="text"
-              placeholder="First name"
+              error={error.firstName}
+              placeholder="First Name"
+              onChange={handleChange}
             />
-            <FormField label="Last Name" type="text" placeholder="Last name" />
-            <FormField label="Email" type="email" placeholder="Email Address" />
+            <FormField
+              label="last Name"
+              id="lastName"
+              value={formData.lastName}
+              type="text"
+              error={error.lastName}
+              placeholder="Last Name"
+              onChange={handleChange}
+            />
+            <FormField
+              label="Email"
+              id="email"
+              value={formData.email}
+              type="email"
+              error={error.email}
+              placeholder="Email Address"
+              onChange={handleChange}
+            />
             <FormField
               label="Password"
+              id="password"
+              value={formData.password}
               type="password"
+              error={error.password}
               placeholder="Password"
+              onChange={handleChange}
             />
-            <Button
-              variants="primary"
-              onClick={validator}
-              children={"claim your free trial"}
-            />
-          </div>
+            <Button variants="primary" children={"claim your free trial"} />
+          </form>
           <p style={{ color: "var(--lightGray)", textAlign: "center" }}>
             By clicking the button, you are agreeing to our{" "}
             <a

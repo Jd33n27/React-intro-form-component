@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./formField.module.css";
 import errorIcon from "/icons/icon-error.svg";
 
